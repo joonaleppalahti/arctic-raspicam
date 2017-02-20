@@ -6,4 +6,6 @@ Kun saimme kaikki projektiin tarvittavat laitteet kasaan (Rasperry Pi 3 Model B,
 Ensimmäiseksi asensimme ohjelman GDDRescue jolla asensimme Ubuntu Mate käyttöjärjestelmän Rasperry Pi 3 Model B:n muistikortille. Asennuksessa käytimme ubuntu-mate.org/rasperry-pi ohjeita ja komentoja. Asennuksen valmistuttua liitimme Rasperryn televisioon HDMI-kaapelilla ja tarkastelimme asennuksen tuloksia. Ubuntu Mate asentui onnistuneesti ja web-kamera toimi kun yhdistimme sen rasperryyn. 
 Päätimme aluksi kokeilla Kim Salmen opinnäytetyönä tekemää falldetector python ohjelmaa joka löytyy täältä: https://github.com/infr/falldetector-public/tree/master/fall-detector-v2. Asensimme ohjelman ja se toimi niinkuin pitikin.
 
+Seuraavaksi aloimme tutkimaan Kim Salmen tekemää koodia ja miettimään millaisen koodin tarvitsemme omaan ohjelmaamme.
+
 

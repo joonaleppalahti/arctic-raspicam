@@ -11,6 +11,7 @@ frameNumber = 0
 frameCount = 0
 imgDir = "img"
 start = time.time()
+thresholdLimit = 20
 
 while(True):
 	#capture frame by frame
@@ -27,7 +28,7 @@ while(True):
 
 	#compare frames
 	frameDelta = cv2.absdiff(background, currentFrame)
-	thresh = cv2.threshold(frameDelta, 20, 255, cv2.THRESH_BINARY)[1]
+	thresh = cv2.threshold(frameDelta, thresholdLimit, 255, cv2.THRESH_BINARY)[1]
 	thresh = cv2.dilate(thresh, None, iterations=30)
 	(contours, _) = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) #find contours
 

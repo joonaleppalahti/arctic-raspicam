@@ -9,7 +9,7 @@ time.sleep(1.0)
 background = None
 frameNumber = 0
 frameCount = 0
-imgDir = "img"
+imgDir = "/home/arctic/img"
 start = time.time()
 minArea = 550
 thresholdLimit = 80

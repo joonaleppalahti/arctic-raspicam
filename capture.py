@@ -58,7 +58,7 @@ while(True):
 	cv2.putText(frame, "fps: {}".format(fps), (400, 20), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 140, 255), 1)
 
 	for contour in contours:
-		if cv2.contourArea(contour) < 250:
+		if cv2.contourArea(contour) < minArea:
 			continue
 
 		(x, y, w, h) = cv2.boundingRect(contour)

@@ -4,6 +4,8 @@
 
 Projektin aluksi kasasimme kaikki projektiin tarvittavat laitteet kasaan (Rasperry Pi 3 Model B, Web-kamera, 16 Gb MicroSD, Xubuntu 16.04.01 LTS kannettava ja kannettavan kortinlukija ja aloitimme työt. Koodi ja dokumentaatio sovittiin tallennettavaksi Joona Leppälahden Github repository:n. Arctic ryhmän jäsenet ovat: Jori Laine, Joona Leppälahti, Eero Kolkki ja Jarkko Koski.
 
+Raspberry Pi ohjelmoidaan ottamaan kameralla kuvia, jotka se lähettää palvelimelle. Palvelin prosessoi kuvat videoiksi, jotka käyttäjä voi katsoa verkkokäyttöliittymästä. 
+
 ![alt text](https://github.com/joonaleppalahti/arctic-raspicam/blob/master/images/kaavio.png "Infrastruktuurikaavio")
 
 ###Raspberry Pi asennus

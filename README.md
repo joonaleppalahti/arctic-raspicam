@@ -1,6 +1,6 @@
 # Raportti järjestelmäprojektin edistymisestä
 
-##20.2.2017 
+##20.02.2017 
 
 Projektin aluksi kasasimme kaikki projektiin tarvittavat laitteet kasaan (Rasperry Pi 3 Model B, Web-kamera, 16 Gb MicroSD, Xubuntu 16.04.01 LTS kannettava ja kannettavan kortinlukija ja aloitimme työt.
 
@@ -12,7 +12,11 @@ Päätimme aluksi kokeilla Kim Salmen opinnäytetyönä tekemää falldetector p
 ###Python ohjelma
 Seuraavaksi aloimme tutkimaan Kim Salmen tekemää koodia ja miettimään millaisen koodin tarvitsemme omaan ohjelmaamme. Otimme koodista sellaisia palasia joista uskoimme olevan apua projektissa ja muokkasimme niitä. Tämän jälkeen lisäsimme omat koodinpätkät väliin. 
 
-Tämä ei kuitenkaan toiminut kuten ajattelimme koska ryhmällämme ei ollut riittäviä Python ohjelmointi- ja koodinlukutaitoja.
+Tämä ei kuitenkaan toiminut kuten ajattelimme koska ryhmällämme ei ollut riittäviä Python ohjelmointi- ja koodinlukutaitoja. Seuraava päivä käytetty opiskellen Pythonia CodeAcademyn Python harjoitusten avulla.
+
+##22.02.2017
+
+OpenCV:n asennus ja Python koodin kirjoitus alusta,
 
 ##Muuta
 Python ohjelman lisäksi projektia varten tehtiin bash-skripti joka siirtää web-kameran ottamat kuvat palvelimelle.

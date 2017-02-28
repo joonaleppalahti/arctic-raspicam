@@ -16,7 +16,9 @@ Tämä ei kuitenkaan toiminut kuten ajattelimme koska ryhmällämme ei ollut rii
 
 ##22.02.2017
 
-OpenCV:n asennus ja Python koodin kirjoitus alusta,
+OpenCV:n asennus ja Python koodin kirjoitus alusta. Seurasimme OpenCV dokumentaatiota ja ongelmakohdissa konsultoimme Stack Overflow:ta. Kim salmen opinnäytetyön koodista päädyimme käyttämään kuvan vertailu osaa eli liiketunnistusta.
+
+
 
 ##Muuta
 Python ohjelman lisäksi projektia varten tehtiin bash-skripti joka siirtää web-kameran ottamat kuvat palvelimelle.

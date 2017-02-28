@@ -4,6 +4,8 @@
 
 Projektin aluksi kasasimme kaikki projektiin tarvittavat laitteet kasaan (Rasperry Pi 3 Model B, Web-kamera, 16 Gb MicroSD, Xubuntu 16.04.01 LTS kannettava ja kannettavan kortinlukija ja aloitimme työt. Koodi ja dokumentaatio sovittiin tallennettavaksi Joona Leppälahden Github repository:n. Arctic ryhmän jäsenet ovat: Jori Laine, Joona Leppälahti, Eero Kolkki ja Jarkko Koski.
 
+![alt text](https://github.com/joonaleppalahti/arctic-raspicam/blob/master/images/kaavio.png "Infrastruktuurikaavio")
+
 ###Raspberry Pi asennus
 Ensimmäiseksi asensimme ohjelman GDDRescue tietokoneeseen, jolla asensimme Ubuntu Mate käyttöjärjestelmän Raspberry Pi 3 Model B:n muistikortille. Asennuksessa käytimme https://ubuntu-mate.org/raspberry-pi/ ohjeita ja komentoja. Asennuksen valmistuttua liitimme Raspberryn televisioon HDMI-kaapelilla ja tarkastelimme asennuksen tuloksia. Ubuntu Mate asentui onnistuneesti ja web-kamera toimi kun yhdistimme sen Raspberryyn.
 

@@ -12,6 +12,9 @@ Raspberry Pi ohjelmoidaan ottamaan kameralla kuvia, jotka se lähettää palveli
 ###Raspberry Pi asennus
 Ensimmäiseksi asensimme ohjelman GDDRescue tietokoneeseen, jolla asensimme Ubuntu Mate käyttöjärjestelmän Raspberry Pi 3 Model B:n muistikortille. Asennuksessa käytimme https://ubuntu-mate.org/raspberry-pi/ ohjeita ja komentoja. Asennuksen valmistuttua liitimme Raspberryn televisioon HDMI-kaapelilla ja tarkastelimme asennuksen tuloksia. Ubuntu Mate asentui onnistuneesti ja web-kamera toimi kun yhdistimme sen Raspberryyn.
 
+![alt text](https://github.com/joonaleppalahti/arctic-raspicam/blob/master/images/xme5b1q.jpg "Raspberry Pi")
+**Kuva 2** Raspberry ja siihen liitetyt piuhat.
+
 Päätimme aluksi kokeilla Kim Salmen opinnäytetyönä tekemää falldetector python ohjelmaa joka löytyy täältä: https://github.com/infr/falldetector-public/tree/master/fall-detector-v2. Asensimme ohjelman Kim Salmen ohjeiden mukaisesti ja se toimi niinkuin pitikin. 
 
 ###Python ohjelma
@@ -32,3 +35,10 @@ Tämä koodi toimi halutulla tavalla.
 ###Muuta
 Python ohjelman lisäksi projektia varten tehtiin bash-skripti joka siirtää web-kameran ottamat kuvat palvelimelle. Scripti laitettiin ajettavaksi automaattisesti Cron:illa alkuun 1 minuutin välein.
 
+##ToDo-lista
+* Web-käyttöliittymä
+* Videoiden koostaminen kuvista
+* Python koodin hiominen
+* Ohjelman automaattinen ajaminen Raspberryn käynnistyessä
+* Kuvien ohjaaminen Arctic:n palvelimelle
+* Projektin esittelymateriaali

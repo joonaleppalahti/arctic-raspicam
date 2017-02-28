@@ -7,6 +7,7 @@ Projektin aluksi kasasimme kaikki projektiin tarvittavat laitteet kasaan (Rasper
 Raspberry Pi ohjelmoidaan ottamaan kameralla kuvia, jotka se lähettää palvelimelle. Palvelin prosessoi kuvat videoiksi, jotka käyttäjä voi katsoa verkkokäyttöliittymästä. 
 
 ![alt text](https://github.com/joonaleppalahti/arctic-raspicam/blob/master/images/kaavio.png "Infrastruktuurikaavio")
+**Kuva 1** Raspberry Pi ottaa kuvia webcamista, kun se havaitsee liikettä. Raspberryssä ajetaan Pythonin avulla OpenCV konenäköä, joka analysoi kuvaa ja tallentaa kuvia liikettä havaitessaan. Tallennetut kuvat Raspberry lähettää tietyin väliajoin Ubuntu palvelimelle, joka koostaa niistä videoita. Videot ovat katseltavissa Apachella toimivalla websivulla. Ubuntu palvelin toimii XenServerin päällä, jolla on muitakin käyttöjärjestelmiä.
 
 ###Raspberry Pi asennus
 Ensimmäiseksi asensimme ohjelman GDDRescue tietokoneeseen, jolla asensimme Ubuntu Mate käyttöjärjestelmän Raspberry Pi 3 Model B:n muistikortille. Asennuksessa käytimme https://ubuntu-mate.org/raspberry-pi/ ohjeita ja komentoja. Asennuksen valmistuttua liitimme Raspberryn televisioon HDMI-kaapelilla ja tarkastelimme asennuksen tuloksia. Ubuntu Mate asentui onnistuneesti ja web-kamera toimi kun yhdistimme sen Raspberryyn.
@@ -29,5 +30,5 @@ Koodi kuitenkin toimi ja kuvia syntyi, joten seuraava vaihe oli sen uudelleen ki
 Tämä koodi toimi halutulla tavalla.
 
 ###Muuta
-Python ohjelman lisäksi projektia varten tehtiin bash-skripti joka siirtää web-kameran ottamat kuvat palvelimelle.
+Python ohjelman lisäksi projektia varten tehtiin bash-skripti joka siirtää web-kameran ottamat kuvat palvelimelle. Scripti laitettiin ajettavaksi automaattisesti Cron:illa alkuun 1 minuutin välein.
 

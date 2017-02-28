@@ -1,6 +1,6 @@
 # Raportti Arctic järjestelmäprojektin edistymisestä
 
-##20.02.2017 
+##Sprint 1
 
 Projektin aluksi kasasimme kaikki projektiin tarvittavat laitteet kasaan (Rasperry Pi 3 Model B, Web-kamera, 16 Gb MicroSD, Xubuntu 16.04.01 LTS kannettava ja kannettavan kortinlukija ja aloitimme työt. Koodi ja dokumentaatio sovittiin tallennettavaksi Joona Leppälahden Github repository:n. Arctic ryhmän jäsenet ovat: Jori Laine, Joona Leppälahti, Eero Kolkki ja Jarkko Koski.
 
@@ -19,7 +19,7 @@ Seuraavaksi aloimme tutkimaan Kim Salmen tekemää koodia ja miettimään millai
 
 Tämä ei kuitenkaan toiminut kuten ajattelimme koska ryhmällämme ei ollut riittäviä Python ohjelmointi- ja koodinlukutaitoja. Seuraava päivä käytetty opiskellen Pythonia CodeAcademyn Python harjoitusten avulla.
 
-##22.02.2017
+##Sprint 2
 
 OpenCV:n asennus ja Python koodin kirjoitus alusta. Seurasimme OpenCV dokumentaatiota https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_tutorials.html ja ongelmakohdissa konsultoimme Stack Overflow:ta. Kim salmen opinnäytetyön koodista päädyimme käyttämään kuvan vertailu osaa eli liiketunnistusta. 
 

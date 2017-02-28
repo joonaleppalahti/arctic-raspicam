@@ -43,3 +43,4 @@ Python ohjelman lisäksi projektia varten tehtiin bash-skripti joka siirtää we
 * Ohjelman automaattinen ajaminen Raspberryn käynnistyessä
 * Kuvien ohjaaminen Arctic:n palvelimelle
 * Projektin esittelymateriaali
+* Asennusohjeiden laatiminen

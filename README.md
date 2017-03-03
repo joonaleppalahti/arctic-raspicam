@@ -65,7 +65,18 @@ Avaa komentorivi (terminal) ja aja ensin sudo apt-get update.
 Asenna seuraavat ohjelmat sudo apt-get install komennolla: libopencv-dev ja python-opencv
 sudo apt-get install libopencv-dev python-opencv.
 
-Sitten asennetaan numpy pythonin avulla.
+Sitten asennetaan numpy pythonin avulla, asennus saattaa kestää hetken.
 pip install numpy
+
+sitten asennetaan git
+sudo apt-get install git
+
+gitin asennuttua voidaan kloonata git repo jossa on kameran koodit valitse haluamasi kansio ja kloonaa repo komennola
+git clone https://github.com/joonalepppalahti/arctic-raspicam.git
+
+tässä vaiheessa voi kokeilla että kamera toimii mene arctic-raspicam kansioon ja anna komento
+python capture.py
+kameran pitäisi käynnistyä ja siinä pitäisi näkyä likkuvien kohteiden ympärillä reunus. Jos reunus näkyy mmyös liikkumatomien kohteiden ympärillä tulee asetuksia muuttaa
+
 
 

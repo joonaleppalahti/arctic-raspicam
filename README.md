@@ -56,7 +56,7 @@ sudo ddrescue -D --force ubuntu-mate-16.04.2-desktop-armhf-raspberry-pi.img /dev
 
 kun muistikortti on valmis voi sen asentaa raspiin.
 
-Kytke Raspberry Pi HDMI-liitännällä näyttöön, kytke myös hiiri ja näppäimistö.
+Kytke Raspberry Pi HDMI-liitännällä näyttöön, kytke myös webbikamera, hiiri ja näppäimistö.
 Käynnistä Raspberry Pi ja asenna Ubuntu Mate seuraten asennusohjelman antamia ohjeita ja vastaten sen tietopyyntöihin.
 
 2. Kameran asentaminen Raspberryyn 
@@ -75,8 +75,25 @@ gitin asennuttua voidaan kloonata git repo jossa on kameran koodit valitse halua
 git clone https://github.com/joonalepppalahti/arctic-raspicam.git
 
 tässä vaiheessa voi kokeilla että kamera toimii mene arctic-raspicam kansioon ja anna komento
+python test.py
+kameran pitäisi käynnistyä ja siinä pitäisi näkyä kameran näkemät kuvat.
+
+luodaan kuville tallenuskansio komennolla 
+mkdir /home/$(whoami)/img
+
+kuvien lähettämiseksi palvelimelle, muokataan upload.sh tiedostosta käyttäjänimi ja ip osoite samaksi kuin palvelimella.
+
+Ajastetaan kuvien siirto palvelimelle komennolla:
+crontab -e
+
+Lisää dokumentin loppuun:
+@reboot python /home/käyttäjänimi/arctic-raspicam/capture.py
+*/1 * * * * /home/käyttäjänimi/arctic-raspicam/upload.sh
+
+Seuraavaksi luodaan ssh-avaimet komennolla ssh-keygen -t rsa. Lähetä sitten avaimet palvelimelle komennolla ssh-copy-id käyttäjä@IP-osoite
+
+lopuksi käynnistä kamera
 python capture.py
-kameran pitäisi käynnistyä ja siinä pitäisi näkyä likkuvien kohteiden ympärillä reunus. Jos reunus näkyy mmyös liikkumatomien kohteiden ympärillä tulee asetuksia muuttaa
 
 
 

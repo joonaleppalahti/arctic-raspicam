@@ -44,3 +44,28 @@ Python ohjelman lisäksi projektia varten tehtiin bash-skripti joka siirtää we
 * Kuvien ohjaaminen Arctic:n palvelimelle
 * Projektin esittelymateriaali
 * Asennusohjeiden laatiminen
+
+##Asennusohjeet (Tämän ohjeen on todettu toimivan Ubuntu Mate käyttöjärjestelmässä)
+1. Muistikortin alustus ja käyttöjärjestelmän asennus
+Liitä muistikortti tietokoneeseen, lataa Ubuntu Mate (https://ubuntu-mate.org/download/) ja aja seuraavat komennot.
+
+sudo apt-get install gddrescue xz-utils
+unxz ubuntu-mate-16.04.2-desktop-armhf-raspberry-pi.img.xz
+sudo ddrescue -D --force ubuntu-mate-16.04.2-desktop-armhf-raspberry-pi.img /dev/sdx 
+(sdx tilalle tulee muistikorttia vastaava laite. Esim meidän tapauksessa mmcblk0.)
+
+kun muistikortti on valmis voi sen asentaa raspiin.
+
+Kytke Raspberry Pi HDMI-liitännällä näyttöön, kytke myös hiiri ja näppäimistö.
+Käynnistä Raspberry Pi ja asenna Ubuntu Mate seuraten asennusohjelman antamia ohjeita ja vastaten sen tietopyyntöihin.
+
+2. Kameran asentaminen Raspberryyn 
+Avaa komentorivi (terminal) ja aja ensin sudo apt-get update.
+
+Asenna seuraavat ohjelmat sudo apt-get install komennolla: libopencv-dev ja python-opencv
+sudo apt-get install libopencv-dev python-opencv.
+
+Sitten asennetaan numpy pythonin avulla.
+pip install numpy
+
+

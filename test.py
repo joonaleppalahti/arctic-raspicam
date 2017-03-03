@@ -11,7 +11,7 @@ frameNumber = 0
 frameCount = 0
 imgDir = "/home/arctic/img"
 start = time.time()
-minArea = 550
+minArea = 50*50
 thresholdLimit = 80
 dilationPixels = 10
 gaussianPixels = 31
@@ -69,7 +69,7 @@ while(True):
 		frameCount += 1
 
 		#save images when movement is detected
-		if wroteImg == 0:
+		"""if wroteImg == 0:
 			cv2.imwrite(os.path.join(imgDir, str(frameNumber))+".png", frame)
 			frameNumber += 1
 			frameCount = 0
@@ -77,11 +77,11 @@ while(True):
 			writeTime = secondInt
 
 		if secondInt > writeTime:
-			wroteImg = 0
+			wroteImg = 0"""
 	#display result
-#	cv2.imshow("feed",frame)
-#	cv2.imshow("delta",frameDelta)
-#	cv2.imshow("Thresh",thresh)
+	cv2.imshow("feed",frame)
+	cv2.imshow("delta",frameDelta)
+	cv2.imshow("Thresh",thresh)
 
 	if cv2.waitKey(1) & 0xFF == ord("q"):
 		break

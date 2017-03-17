@@ -1,0 +1,35 @@
+video {
+	max-width: 33%;
+	max-height: 33%;
+	padding: 5px;
+	float: left;
+}
+
+body {
+        font-family: Futura, Futura-Medium, "Futura Medium", "Century Gothic", CenturyGothic, "Apple Gothic", AppleGothic, "URW Gothic L", "Avant Garde", sans-serif;
+	background-color: #f2f2f2;
+
+}
+
+#brand {
+        color: black !important;
+        border: none !important;
+        font-size: 35px;
+        font-family: Futura, Futura-Medium, "Futura Medium", "Century Gothic", CenturyGothic, "Apple Gothic", AppleGothic, "URW Gothic L", "Avant Garde", sans-serif;
+	background: #f2f2f2;
+}
+
+.navbar {
+        color: #ffffff;
+        border: none !important;
+        font-weight: bold;
+        border-radius: 0;
+}
+a {
+        color: #ffffff !important;
+
+}
+
+.navbar-nav {
+	font-size: 24px !important;
+}

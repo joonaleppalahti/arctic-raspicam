@@ -2,16 +2,16 @@ import numpy as np
 import time
 import cv2
 import os
+import datetime
 
 camera = cv2.VideoCapture(0)
-#camera.set(cv2.cv.CV_CAP_PROP_FPS, 1)
 time.sleep(1.0)
 background = None
 frameNumber = 0
 frameCount = 0
 imgDir = "/home/arctic/img"
 start = time.time()
-minArea = 550
+minArea = 50*50
 thresholdLimit = 80
 dilationPixels = 10
 gaussianPixels = 31
@@ -53,9 +53,12 @@ while(True):
 	fps = round((1 / seconds), 1)
 	start = time.time()
 
+	today_date = datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S")
+
 	secondInt = int(time.time())
 
-	cv2.putText(frame, "fps: {}".format(fps), (400, 20), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 140, 255), 1)
+#	cv2.putText(frame, "fps: {}".format(fps), (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 1)
+	cv2.putText(frame, " {}".format(today_date), (20, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 1)
 
 	for contour in contours:
 		if cv2.contourArea(contour) < minArea:
@@ -70,7 +73,7 @@ while(True):
 
 		#save images when movement is detected
 		if wroteImg == 0:
-			cv2.imwrite(os.path.join(imgDir, str(frameNumber))+".png", frame)
+			cv2.imwrite(os.path.join(imgDir, str(format(frameNumber, '04')))+".png", frame)
 			frameNumber += 1
 			frameCount = 0
 			wroteImg = 1
@@ -79,7 +82,7 @@ while(True):
 		if secondInt > writeTime:
 			wroteImg = 0
 	#display result
-#	cv2.imshow("feed",frame)
+	cv2.imshow("feed",frame)
 #	cv2.imshow("delta",frameDelta)
 #	cv2.imshow("Thresh",thresh)
 

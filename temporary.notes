@@ -1,0 +1,8 @@
+makevideo.sh palvelimelle /home/arctic/img
+
+palvelimen sudo crontab -e
+*/1 * * * * cd /home/arctic/img && /home/arctic/img/makevideo.sh
+*/2 * * * * /var/www/html/ArcticWeb/img/old/.old.sh
+
+raspin crontab
+*/1 * * * * /home/arctic/arctic-raspicam/upload.sh

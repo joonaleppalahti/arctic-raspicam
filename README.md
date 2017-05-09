@@ -7,7 +7,7 @@ Projektin aluksi kasasimme kaikki projektiin tarvittavat laitteet kasaan (Rasper
 Raspberry Pi ohjelmoidaan ottamaan kameralla kuvia, jotka se lähettää palvelimelle. Palvelin prosessoi kuvat videoiksi, jotka käyttäjä voi katsoa verkkokäyttöliittymästä.
 
 ![alt text](https://github.com/joonaleppalahti/arctic-raspicam/blob/master/images/kaavioNew.png "Infrastruktuurikaavio")
-**Kuva 1** Raspberry Pi ottaa kuvia webcamista, kun se havaitsee liikettä. Raspberryssä ajetaan Pythonin avulla OpenCV konenäköä, joka analysoi kuvaa ja tallentaa kuvia liikettä havaitessaan. Tallennetut kuvat Raspberry lähettää tietyin väliajoin Ubuntu palvelimelle, joka koostaa niistä videoita. Videot ovat katseltavissa Apachella toimivalla websivulla. Ubuntu palvelin toimii XenServerin päällä, jolla on muitakin käyttöjärjestelmiä.
+**Kuva 1** Raspberry Pi ottaa kuvia webcamista, kun se havaitsee liikettä. Raspberryssä ajetaan Pythonin avulla OpenCV konenäköä, joka analysoi kuvaa ja tallentaa kuvia liikettä havaitessaan. Tallennetut kuvat Raspberry lähettää tietyin väliajoin Xubuntu palvelimelle, joka koostaa niistä videoita. Videot ovat katseltavissa Apachella toimivalla websivulla. Xubuntu palvelin toimii XenServerin päällä, jolla on muitakin käyttöjärjestelmiä (ei näy kaaviossa).
 
 ### Raspberry Pi asennus
 Ensimmäiseksi asensimme ohjelman GDDRescue tietokoneeseen, jolla asensimme Ubuntu Mate käyttöjärjestelmän Raspberry Pi 3 Model B:n muistikortille. Asennuksessa käytimme https://ubuntu-mate.org/raspberry-pi/ ohjeita ja komentoja. Asennuksen valmistuttua liitimme Raspberryn televisioon HDMI-kaapelilla ja tarkastelimme asennuksen tuloksia. Ubuntu Mate asentui onnistuneesti ja web-kamera toimi kun yhdistimme sen Raspberryyn.
@@ -38,10 +38,10 @@ Python ohjelman lisäksi projektia varten tehtiin bash-skripti joka siirtää we
 1. Muistikortin alustus ja käyttöjärjestelmän asennus
 Liitä muistikortti tietokoneeseen, lataa Ubuntu Mate (https://ubuntu-mate.org/download/) ja aja seuraavat komennot.
 
-sudo apt-get install gddrescue xz-utils
-unxz ubuntu-mate-16.04.2-desktop-armhf-raspberry-pi.img.xz
-sudo ddrescue -D --force ubuntu-mate-16.04.2-desktop-armhf-raspberry-pi.img /dev/sdx 
-(sdx tilalle tulee muistikorttia vastaava laite. Esim meidän tapauksessa mmcblk0.)
+`sudo apt-get install gddrescue xz-utils`
+`unxz ubuntu-mate-16.04.2-desktop-armhf-raspberry-pi.img.xz`
+`sudo ddrescue -D --force ubuntu-mate-16.04.2-desktop-armhf-raspberry-pi.img /dev/sdx`
+(sdx tilalle tulee muistikorttia vastaava laite. Esim meidän tapauksessamme mmcblk0.)
 
 kun muistikortti on valmis voi sen asentaa raspiin.
 
@@ -49,40 +49,40 @@ Kytke Raspberry Pi HDMI-liitännällä näyttöön, kytke myös webbikamera, hii
 Käynnistä Raspberry Pi ja asenna Ubuntu Mate seuraten asennusohjelman antamia ohjeita ja vastaten sen tietopyyntöihin.
 
 2. Kameran asentaminen Raspberryyn 
-Avaa komentorivi (terminal) ja aja ensin sudo apt-get update.
+Avaa komentorivi (terminal) ja aja ensin `sudo apt-get update`
 
-Asenna seuraavat ohjelmat sudo apt-get install komennolla: libopencv-dev ja python-opencv
-sudo apt-get install libopencv-dev python-opencv.
+Asenna seuraavat ohjelmat `sudo apt-get install libopencv-dev ja python-opencv`
+`sudo apt-get install libopencv-dev python-opencv`
 
 Sitten asennetaan numpy pythonin avulla, asennus saattaa kestää hetken.
-pip install numpy
+`pip install numpy`
 
 sitten asennetaan git
-sudo apt-get install git
+`sudo apt-get install git`
 
 gitin asennuttua voidaan kloonata git repo jossa on kameran koodit valitse haluamasi kansio ja kloonaa repo komennola
-git clone https://github.com/joonalepppalahti/arctic-raspicam.git
+`git clone https://github.com/joonalepppalahti/arctic-raspicam.git`
 
-tässä vaiheessa voi kokeilla että kamera toimii mene arctic-raspicam kansioon ja anna komento
-python test.py
+tässä vaiheessa voi kokeilla että kamera toimii, mene arctic-raspicam kansioon ja anna komento
+`python test.py`
 kameran pitäisi käynnistyä ja siinä pitäisi näkyä kameran näkemät kuvat.
 
 luodaan kuville tallenuskansio komennolla 
-mkdir /home/$(whoami)/img
+`mkdir /home/$(whoami)/img`
 
 kuvien lähettämiseksi palvelimelle, muokataan upload.sh tiedostosta käyttäjänimi ja ip osoite samaksi kuin palvelimella.
 
 Ajastetaan kuvien siirto palvelimelle komennolla:
-crontab -e
+`crontab -e`
 
 Lisää dokumentin loppuun:
 @reboot python /home/käyttäjänimi/arctic-raspicam/capture.py
 */1 * * * * /home/käyttäjänimi/arctic-raspicam/upload.sh
 
-Seuraavaksi luodaan ssh-avaimet komennolla ssh-keygen -t rsa. Lähetä sitten avaimet palvelimelle komennolla ssh-copy-id käyttäjä@IP-osoite
+Seuraavaksi luodaan ssh-avaimet komennolla `ssh-keygen -t rsa`. Lähetä sitten avaimet palvelimelle komennolla `ssh-copy-id käyttäjä@IP-osoite`
 
 lopuksi käynnistä kamera
-python capture.py
+`python capture.py`
 
 
 
